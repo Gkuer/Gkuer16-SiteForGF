@@ -1,8 +1,8 @@
 
 
 <h3 align="center">
-Development for Girlfriend birthday 🤹‍<br/>
-    <img width="300" alt="Logo" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README12.png" style="max-width: 100%;" /><br/>
+Development for Girlfriend birthday 🤹‍<br/><br/>
+    <img width="300" alt="Logo" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README12.png" style="max-width: 100%;" />
 </h3>
 
 
@@ -25,12 +25,12 @@ Development for Girlfriend birthday 🤹‍<br/>
 <table>
 <tr>
 <th align="center">
-<img width="220" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README1.PNG">
-  <img width="220" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README2.PNG">
+<img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README1.PNG">
+  <img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README2.PNG">
 </th>
 <th align="center">
-<img width="220" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README3.PNG">
-  <img width="220" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README4.PNG">
+<img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README3.PNG">
+  <img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README4+(1).png">
 </th>
 </tr>
 </table>
@@ -38,12 +38,12 @@ Development for Girlfriend birthday 🤹‍<br/>
 <table>
 <tr>
 <th align="center">
-<img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README5.PNG">
-  <img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README6.PNG">
+<img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README5+(1).png">
+  <img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README6.PNG">
 </th>
 <th align="center">
-<img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README7.PNG">
-  <img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README8.PNG">
+<img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README7.PNG">
+  <img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README8.PNG">
 </th>
 </tr>
   </table>
@@ -51,10 +51,12 @@ Development for Girlfriend birthday 🤹‍<br/>
 <table>
 <tr>
 <th align="center">
-<img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README13.jpeg">
-  <img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README9.PNG">
-<img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README10.MOV">
-  <img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README11.MOV">
+<img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README13.jpeg">
+  <img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README9.PNG">
+</th>
+<th align="center">
+<img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README10_MOV_AdobeExpress.gif">
+  <img width="180" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README11_MOV_AdobeExpress.gif">
 </th>
 </tr>
   </table>
@@ -130,4 +132,4 @@ Development for Girlfriend birthday 🤹‍<br/>
 
 > Standard log is enabled.
 
-<img width="225" src="https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README14.PNG">
+![Image](https://gkuer-suhyun.s3.ap-northeast-2.amazonaws.com/README/README14.png)
