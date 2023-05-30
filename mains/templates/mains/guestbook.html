@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>secret's birthday</title>
+
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/style.css">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/custom-style.css">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/guestbook-custom-style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="https://secret.secret.cf/static/mains/_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://secret.secret.cf/static/mains/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://secret.secret.cf/static/mains/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://secret.secret.cf/static/mains/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://secret.secret.cf/static/mains/favicon/site.webmanifest">
+<link rel="mask-icon" href="https://secret.secret.cf/static/mains/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="theme-light">
+
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+<div id="page" style="height: 300px;">
+
+    <div class="header header-fixed header-logo-center header-auto-show">
+        <a href="https://secret.secret.cf/" class="header-title">secret's birthday</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i class="fas fa-moon"></i></a>
+    </div>
+
+    <div id="footer-bar" class="footer-bar-6">
+        <a href="https://secret.secret.cf/timeline/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper1.PNG" alt="내 사진" ><span>타임라인</span></a>
+        <a href="https://secret.secret.cf/quiz/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper3.png" alt="내 사진" ><span>간단퀴즈</span></a>
+        <a href="https://secret.secret.cf/" class="circle-nav active-nav"><i class="fa fa-home"></i><span>홈</span></a>
+        <a href="https://secret.secret.cf/guestbook/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper2.png" alt="내 사진" ><span>방명록</span></a>
+        <a href="#" data-menu="menu-main"><i class="fa fa-bars" style="margin-top: 5px;"></i><span>메뉴</span></a>
+    </div>
+
+    <div class="page-title page-title-fixed">
+        <h1>secret's birthday</h1>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-light" data-toggle-theme><i class="fa fa-moon"></i></a>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-dark" data-toggle-theme><i class="fa fa-lightbulb color-yellow-dark"></i></a>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-main"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <div class="page-title-clear"></div>
+
+    <div class="page-content">
+
+      <div class="content" style="width: 90%;">
+        <div class="content__container">
+          <p class="content__container__text" style="color:#355C7D;">
+            수현아
+          </p>
+
+          <ul class="content__container__list">
+            {% for guestbook in guestbooks %}
+            {% if forloop.counter <= 4 %}
+              {% if forloop.counter == 1 %}
+            <li class="content__container__list__item" style="color:#F67280;">{{guestbook.comment}}</li>
+            {% endif %}
+              {% if forloop.counter == 2 %}
+            <li class="content__container__list__item" style="color:#C06C84;">{{guestbook.comment}}</li>
+            {% endif %}
+              {% if forloop.counter == 3 %}
+            <li class="content__container__list__item" style="color:#F67280;">{{guestbook.comment}}</li>
+            {% endif %}
+              {% if forloop.counter == 4 %}
+            <li class="content__container__list__item" style="color:#C06C84;">{{guestbook.comment}}</li>
+            {% endif %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <h1>
+        <button id="custom-button" style="margin-top: 10px; border: 1px solid; border-radius: 10px; font-size: 50px; color: #E84A5F; font-weight: bolder; width: 75px; height: 75px; background-size: cover; opacity: 0.7; position: relative;">
+          <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #E84A5F;">↑</span>
+          <span style="position: absolute; bottom: -5px; font-size: 12px; left: 50%; transform: translateX(-50%);">업로드</span>
+        </button>
+      </h1>
+    </div>
+
+    <div>
+      <form method="post" action="">
+        {% csrf_token %}
+        <div class="page-content" style="display: flex; justify-content: center; align-items: center; flex-direction: column; width: 100%;">
+          <div style="margin-top: 75px; display: flex; justify-content: center; align-items: flex-end; width: 80%; background-color: transparent;">
+            <input name="comment" placeholder="방명록 (최대 8글자)" style="text-align: center; border-radius:10px;  background-color: transparent; color: #2A363B; width: 450px; height: 50px;" maxlength="8" type="text">
+            <button id="real-submit" type="submit" style="display: none;"></button>
+          </div>
+            <h1 style="margin-top:10px; color: #FF847C; font-size: 25px;">By</h1>
+          <div style="margin-top:5px; display: flex; align-items: flex-start;">
+            <input name="insta_name" placeholder="인스타 아이디" style="text-align: center; border-radius:10px; background-color: transparent; color: #E84A5F; width: 200px; height: 50px;" type="text" name=""><h3 style="color: #FF847C;"></h3>
+          </div>
+        </div>
+      </form>
+    </div>
+    <h3>&nbsp&nbsp</h3>
+    {% for guestbook in guestbooks %}
+    <div class="card bg-light" style="background-color: #FECEAB; max-width: 100%; border-radius: 20px;">
+      <div class="card-body" style="background-color: #FECEAB; border-radius: 20px;">
+          <h5 class="card-title" style=" font-size: 15px;"><a style="color: #E84A5F;" target="_blank" href="https://www.instagram.com/{{ guestbook.insta_name }}/">@{{guestbook.insta_name}}</a></h5>
+        <p class="card-text" style="font-size: 20px; color: #2A363B;">{{guestbook.comment}}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+<!-- Page content ends here-->
+
+<!-- Main Menu-->
+<div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="/menu-main.html" data-menu-width="280" data-menu-active="nav-components"></div>
+
+<!-- Colors Menu-->
+<div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
+
+<script type="text/javascript" src="https://secret.secret.cf/static/mains/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://secret.secret.cf/static/mains/scripts/custom.js"></script>
+
+<script>
+    function redirectToPage() {
+      window.location.href = "https://secret.secret.cf/timeline-upload/"; // 리디렉션할 페이지의 URL을 입력하세요.
+    }
+</script>
+
+<script>
+  document.getElementById('custom-button').addEventListener('click', function() {
+    document.getElementById('real-submit').click();
+  });
+</script>
+
+</body>

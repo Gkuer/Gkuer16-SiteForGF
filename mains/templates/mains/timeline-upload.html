@@ -1,0 +1,170 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>secret's birthday</title>
+
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/style.css">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/custom-style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="https://secret.secret.cf/static/mains/_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://secret.secret.cf/static/mains/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://secret.secret.cf/static/mains/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://secret.secret.cf/static/mains/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://secret.secret.cf/static/mains/favicon/site.webmanifest">
+<link rel="mask-icon" href="https://secret.secret.cf/static/mains/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+
+<body class="theme-light">
+
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+<div id="page">
+
+    <div class="header header-fixed header-logo-center header-auto-show">
+        <a href="https://secret.secret.cf/" class="header-title">secret's birthday</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i class="fas fa-moon"></i></a>
+    </div>
+
+    <div id="footer-bar" class="footer-bar-6">
+        <a href="https://secret.secret.cf/timeline/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper1.PNG" alt="내 사진" ><span>타임라인</span></a>
+        <a href="https://secret.secret.cf/quiz/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper3.png" alt="내 사진" ><span>간단퀴즈</span></a>
+        <a href="https://secret.secret.cf/" class="circle-nav active-nav"><i class="fa fa-home"></i><span>홈</span></a>
+        <a href="https://secret.secret.cf/guestbook/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper2.png" alt="내 사진" ><span>방명록</span></a>
+        <a href="#" data-menu="menu-main"><i class="fa fa-bars" style="margin-top: 5px;"></i><span>메뉴</span></a>
+    </div>
+
+    <div class="page-title page-title-fixed">
+        <h1>secret's birthday</h1>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-light" data-toggle-theme><i class="fa fa-moon"></i></a>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-dark" data-toggle-theme><i class="fa fa-lightbulb color-yellow-dark"></i></a>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-main"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <div class="page-title-clear"></div>
+
+    <div class="page-content">
+
+        <div class="card card-style" style="display: flex; justify-content: center; align-items: center;">
+            <div class="content mb-0" style="height:300px; text-align: center;">
+                <p class="mb-n1 color-highlight font-600">공유하고 싶은 추억을</p>
+                <h1>이 곳에 올려주세요!</h1>
+                <div>
+                    <form>
+                        {% csrf_token %}
+                      <label for="imageInput" style="display: inline-block; opacity:0.6;" class="custom-btn btn-15" id="uploadLabel">사진 업로드</label>
+                      <input type="file" id="imageInput" accept="image/*" required style="display: none;" onchange="updateUploadStatus(this)">
+                      <br>
+                      <h3 style="margin-top:23px;"><input type="text" id="text2Input" placeholder="전하고 싶은 한마디" style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; width:250px !important; height:40px !important; font-size: 15px !important; text-align: center !important;"></h3>
+                      <label for="text1Input">From</label>
+                      <input style="margin-left:10px; margin-top:10px; width:150px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; text-align: center !important; height:40px !important;; font-size: 15px !important;" type="text" id="text1Input" placeholder="인스타 아이디">
+                      <br>
+                      <input type="button" id="uploadLabel2" class="custom-btn btn-13" style="margin-top:23px; width:200px;" value="공유하기" onclick="uploadToS3()">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- Page content ends here-->
+
+    <!-- Main Menu-->
+    <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="/menu-main.html" data-menu-width="280" data-menu-active="nav-components"></div>
+
+    <!-- Colors Menu-->
+    <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
+
+</div>
+
+<script type="text/javascript" src="https://secret.secret.cf/static/mains/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://secret.secret.cf/static/mains/scripts/custom.js"></script>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.818.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+// 유출돼도 괜찮습니다.
+AWS.config.region = 'ap-northeast-2';
+AWS.config.accessKeyId = 'secret';
+AWS.config.secretAccessKey = 'secret';
+
+function uploadToS3() {
+const fileInput = document.getElementById('imageInput');
+const file = fileInput.files[0];
+
+var button = document.getElementById('uploadLabel2');
+button.value = "업로드 중...";
+
+const s3 = new AWS.S3();
+const params = {
+  Bucket: 'secret-secret',
+  Key: 'user-upload/' + file.name,
+  ContentType: file.type,
+  Body: file
+};
+
+s3.upload(params, (err, data) => {
+  if (err) {
+    console.error('S3 업로드 오류:', err);
+  } else {
+    const imageUrl = data.Location;
+    const text1 = document.getElementById('text1Input').value;
+    const text2 = document.getElementById('text2Input').value;
+
+    const payload = {
+      imageUrl: imageUrl,
+      text1: text1,
+      text2: text2
+    };
+
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    axios.defaults.headers.common['X-CSRFToken'] = csrftoken;
+
+    axios.post('/timeline-store/', JSON.stringify(payload), {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrftoken
+      }
+    }).then(response => {
+        console.log('요청이 성공적으로 처리됨');
+        window.location.href = '/timeline';
+      })
+      .catch(error => {
+        console.error('요청이 실패하거나 에러가 발생함', error);
+      });
+
+  }
+});
+}
+</script>
+
+<script>
+   function updateUploadStatus(input) {
+      var uploadLabel = document.getElementById('uploadLabel');
+      if (input.files && input.files.length > 0) {
+        uploadLabel.textContent = '업로드 완료';
+      } else {
+        uploadLabel.textContent = '사진 업로드';
+      }
+    }
+</script>
+</body>

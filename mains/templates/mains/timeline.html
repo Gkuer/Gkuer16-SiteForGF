@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>secret's birthday</title>
+
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/style.css">
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/styles/custom-style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="https://secret.secret.cf/static/mains/fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="{% static 'mains/_manifest.json' %}" data-pwa-version="set_in_manifest_and_pwa_js">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://secret.secret.cf/static/mains/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://secret.secret.cf/static/mains/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://secret.secret.cf/static/mains/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://secret.secret.cf/static/mains/favicon/site.webmanifest">
+<link rel="mask-icon" href="https://secret.secret.cf/static/mains/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+
+<body class="theme-light">
+
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+<div id="page">
+
+    <div class="header header-fixed header-logo-center header-auto-show">
+        <a href="https://secret.secret.cf/" class="header-title">secret's birthday</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i class="fas fa-moon"></i></a>
+    </div>
+
+    <div id="footer-bar" class="footer-bar-6">
+        <a href="https://secret.secret.cf/timeline/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper1.PNG" alt="내 사진" ><span>타임라인</span></a>
+        <a href="https://secret.secret.cf/quiz/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper3.png" alt="내 사진" ><span>간단퀴즈</span></a>
+        <a href="https://secret.secret.cf/" class="circle-nav active-nav"><i class="fa fa-home"></i><span>홈</span></a>
+        <a href="https://secret.secret.cf/guestbook/"><img style="margin-bottom: 5px; width: 25px;" src="https://secret.secret.cf/static/pepper2.png" alt="내 사진" ><span>방명록</span></a>
+        <a href="#" data-menu="menu-main"><i class="fa fa-bars" style="margin-top: 5px;"></i><span>메뉴</span></a>
+    </div>
+
+    <div class="page-title page-title-fixed">
+        <h1>secret's birthday</h1>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-light" data-toggle-theme><i class="fa fa-moon"></i></a>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-dark" data-toggle-theme><i class="fa fa-lightbulb color-yellow-dark"></i></a>
+        <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-main"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <div class="page-title-clear"></div>
+
+    <div class="page-content">
+
+    <div class="card card-style" style="display: flex; justify-content: center; align-items: center;">
+        <div class="content mb-0" style="height:100px; text-align: center;">
+            <p class="mb-n1 color-highlight font-600">공유하고 싶은 추억을</p>
+            <h1>이 곳에 올려주세요!</h1>
+            <a href="https://secret.secret.cf/timeline-upload/" style="display: flex; justify-content: center;">
+                <button class="custom-btn btn-13" style="width:200px; margin-top: -10px;">공유하기</button>
+            </a>
+        </div>
+    </div>
+
+        {% for timeline in timelines %}
+        <div class="card card-style" style="background-image: url('{{ timeline.s3_url }}');" data-card-height="350">
+            <div class="card-bottom">
+                <div class="content text-end">
+                    <h5 class="color-white" style="font-size: 20px;">{{ timeline.comment }}</h5>
+                    <p class="color-white opacity-70" style="font-size:20px;">
+                        From <a target="_blank" href="https://www.instagram.com/{{ timeline.insta_name }}/">@{{ timeline.insta_name }}</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card-overlay bg-gradient opacity-70"></div>
+        </div>
+        {% endfor %}
+
+        <div class="divider divider-margins"></div>
+
+
+    </div>
+    <!-- Page content ends here-->
+
+    <!-- Main Menu-->
+    <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="/menu-main.html" data-menu-width="280" data-menu-active="nav-components"></div>
+
+    <!-- Colors Menu-->
+    <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html" data-menu-height="480"></div>
+
+
+
+</div>
+
+<script type="text/javascript" src="https://secret.secret.cf/static/mains/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://secret.secret.cf/static/mains/scripts/custom.js"></script>
+
+</body>
